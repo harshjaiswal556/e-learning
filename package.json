@@ -1,0 +1,24 @@
+{
+  "name": "E-learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshjaiswal556/e-learning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshjaiswal556/e-learning/issues"
+  },
+  "homepage": "https://github.com/harshjaiswal556/e-learning#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
