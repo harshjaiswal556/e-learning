@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/harshjaiswal556/e-learning#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "hbs": "^4.2.0",
+    "mongoose": "^6.1.8",
+    "path": "^0.12.7"
   }
 }
