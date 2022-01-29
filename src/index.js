@@ -26,6 +26,10 @@ let myInfo = nodemailer.createTransport({
     }
 })
 
+function otpGenerator(){
+    
+}
+
 app.get("/",(req,res)=>{
     res.render("home");
 })
@@ -40,6 +44,9 @@ app.get("/forgot",(req,res)=>{
 })
 app.get("/emailVerification",(req,res)=>{
     res.render("emailVerification")
+})
+app.get("/forgotOTPGen",(req,res)=>{
+    res.render("forgotOTPGen")
 })
 app.post("/signup",(req,res)=>{
     try {
@@ -109,6 +116,44 @@ app.post("/login",async(req,res)=>{
         }
     }catch(err){
         console.log(err)
+    }
+})
+
+app.post("/forgot",async(req,res)=>{
+    try{
+        const email = req.body.forgotEmail;
+        const useremail =await SignUp.findOne({email:email});
+        if(!useremail){
+            res.send("Email does not exist");
+        }
+        else{
+            const otp = Math.round(1000 + (9999 - 1000) * (Math.random()));
+            let mailOptions={
+                from:"hsjaiswal3110@gmail.com",
+                to: req.body.forgotEmail,
+                subject:"Message from harsh jaiswal",
+                text:`${otp}`
+            }
+            myInfo.sendMail(mailOptions,function(err,info){
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.status(200).send(info.response);
+                }
+            })
+            res.status(201).render("forgotOTPGen");
+            app.post("/forgotOTPGen",(req,res)=>{
+                if(otp==req.body.emailverify){
+                    res.status(201).render("setPassword");
+                }
+                else{
+                    res.send("Invalid OTP")
+                }
+            })
+            
+        }
+    }catch(err){
+        console.log(err);
     }
 })
 app.listen(port,()=>{
