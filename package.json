@@ -19,10 +19,12 @@
   },
   "homepage": "https://github.com/harshjaiswal556/e-learning#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.2",
     "hbs": "^4.2.0",
     "mongoose": "^6.1.8",
     "nodemailer": "^6.7.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "razorpay": "^2.8.0"
   }
 }

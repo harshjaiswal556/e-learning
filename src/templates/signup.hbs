@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>E-Learning : Signup</title>
+    <title>Me and Maths : Signup</title>
 </head>
 <style>
     body {
@@ -21,9 +21,11 @@
     .container {
         background-color: rgba(252, 255, 47, 0.699);
         border-radius: 20px;
+        width: 110%;
     }
 
     .main_header_left {
+        height: :30rem;
         display: inline-flex;
         flex-direction: column;
         justify-content: center;
@@ -32,6 +34,7 @@
 
     .main_header_right {
         height: 30rem;
+        padding-left: 5vw;
         display: inline-flex;
         flex-direction: column;
         justify-content: center;
@@ -59,31 +62,31 @@
 </style>
 
 <body>
-    <div class="row mx-5 my-3 container" style="padding: 100px;">
-        <div class="col-md-6 col-12 main_header_left">
+    <div class="row mx-5 my-3 container" style="padding-top: 100px; padding-left:10px; padding-bottom:200px;">
+        <div class="col-md-3 col-6 main_header_left">
             <figure>
-                <img src="signup.png" height="350px" alt="">
+                <img src="signup.png" height="210rem" alt="">
             </figure>
         </div>
-        <div class="col-md-6 col-12 main_header_right">
+        <div class="col-md-6 col-12 main_header_right" style="padding-top: 150px;">
             <h1>Signup</h1>
             <br>
             <form action="\signup" method="post">
-                <div class="mb-3 row">
-                    <label for="staticName" class="col-sm-3 col-form-label">Full Name</label>
+                <div class="row">
+                    <label for="staticName" class="col-sm-5 col-form-label">Full Name</label>
                     <div class="col-sm-10" style="width: 400px;">
                         <input type="text" class="form-control" id="staticName" placeholder="Full Name" name="fullname">
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <label for="staticEmail" class="col-sm-3 col-form-label">Email</label>
+                <div class="row">
+                    <label for="staticEmail" class="col-sm-5 col-form-label">Email</label>
                     <div class="col-sm-10" style="width: 400px;">
                         <input type="email" class="form-control" id="staticEmail" placeholder="email@example.com"
                             name="myemail">
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <label for="staticGender" class="col-sm-3 col-form-label">Gender</label>
+                <div class="row">
+                    <label for="staticGender" class="col-sm-5 col-form-label">Gender</label>
                     <div class="col-sm-10" style="width: 400px;">
                         <select class="form-select" aria-label="Default select example" name="mygender">
                             <option selected>Select Gender</option>
@@ -93,14 +96,13 @@
                         </select>
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <label for="staticGender" class="col-sm-3 col-form-label">Course</label>
+                <div class="row">
+                    <label for="staticGender" class="col-sm-5 col-form-label">Course</label>
                     <div class="col-sm-10" style="width: 400px;">
                         <select class="form-select" aria-label="Default select example" name="mycourse">
                             <option selected>Select Course</option>
                             <option value="IIT-JEE">IIT-JEE</option>
                             <option value="NEET">NEET</option>
-                            <option value="AIMS">AIMS</option>
                             <option value="UPSC">UPSC</option>
                             <option value="NDA">NDA</option>
                             <option value="Class 6">Class 6</option>
@@ -113,15 +115,15 @@
                         </select>
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+                <div class="row">
+                    <label for="inputPassword" class="col-sm-5 col-form-label">Password</label>
                     <div class="col-sm-10" style="width: 400px;">
                         <input type="password" class="form-control" placeholder="password" name="myPassword">
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <label for="inputPassword" class="col-sm-3 col-form-label">Confirm Password</label>
-                    <div class="col-sm-10" style="width: 400px;">
+                <div class="row">
+                    <label for="inputPassword" class="col-sm-5 col-form-label">Confirm Password</label>
+                    <div class="col-sm-6" style="width: 400px;">
                         <input type="password" class="form-control" placeholder=" confirm password"
                             name="myConPassword">
                     </div>
@@ -131,7 +133,6 @@
                 <button type="submit" class="btn btn-primary">Generate OTP</button>
             </form>
         </div>
-        <h3>After the process of signup you will recieve an OTP in your mail ID.</h3>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -143,13 +144,4 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
 </body>
-<script>
-        let staticEmail = document.getElementById("staticEmail");
-    let OTP = document.getElementById("OTP");
-    OTP.addEventListener("click", () => {
-        const otp = Math.round(1000 + (9999 - 1000) * (Math.random()));
-        console.log(otp);
-        console.log(staticEmail.value);
-    })
-</script>
 </html>
